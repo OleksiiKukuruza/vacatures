@@ -1,19 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import { configureStore } from '../store/configureStore';
+import styled, { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
+import { configureStore } from '../store/configureStore';
+import theme from '../theme';
+import MainContainer from '../containers/MainContainer';
 
 const store = configureStore();
 
-const AppWrapper = styled.div`
+const StyledApp = styled.div`
   height: 100%;
-  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const App = () => (
   <Provider store={store}>
-    <AppWrapper>
-    </AppWrapper>
+    <ThemeProvider theme={theme}>
+      <StyledApp>
+        <MainContainer />
+      </StyledApp>
+    </ThemeProvider>
   </Provider>
 );
 

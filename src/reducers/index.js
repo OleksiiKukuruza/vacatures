@@ -1,3 +1,8 @@
 import { combineReducers } from 'redux';
+import vacancies from './vacancies';
 
-export const rootReducer = combineReducers();
+const rootReducer = combineReducers({
+  vacancies
+});
+
+export default rootReducer;
