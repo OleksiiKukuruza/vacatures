@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader renders without crashing 1`] = `
+<styled.div>
+  <onlyUpdateForKeys(Loader)
+    color="#54b6c8"
+    loaderStyle={Object {}}
+    loading={true}
+    margin="2px"
+    size={25}
+    sizeUnit="px"
+  />
+</styled.div>
+`;

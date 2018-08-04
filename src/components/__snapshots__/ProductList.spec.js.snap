@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList renders ProductList without crashing 1`] = `
+<styled.div>
+  <styled.h3>
+    Online Vacatures
+  </styled.h3>
+  <div>
+    Introductiepakketten
+  </div>
+  <Connect(branch(ProductTable)) />
+</styled.div>
+`;
+
+exports[`ProductList renders StyledHeader without crashing 1`] = `
+.c0 {
+  color: #54b6c8;
+}
+
+<h3
+  className="c0"
+/>
+`;
+
+exports[`ProductList renders StyledProductList without crashing 1`] = `
+.c0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid #54b6c8;
+  border-right: none;
+}
+
+<div
+  className="c0"
+/>
+`;

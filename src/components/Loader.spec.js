@@ -14,7 +14,7 @@ const setup = () => {
 };
 
 describe('Loader', () => {
-  test('renders without crashing', () => {
+  it('renders without crashing', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
   });

@@ -12,7 +12,7 @@ const setup = () => {
 };
 
 describe('App', () => {
-  test('renders without crashing', () => {
+  it('renders without crashing', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
   });

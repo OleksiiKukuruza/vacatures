@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ProductTableContainer from '../containers/ProductTableContainer';
 
-const StyledProductList = styled.div`
+export const StyledProductList = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ const StyledProductList = styled.div`
   border-right: none;
 `;
 
-const StyledHeader = styled.h3`
+export const StyledHeader = styled.h3`
   color: ${props => props.theme.primary.main};
 `;
 
