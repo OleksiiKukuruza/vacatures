@@ -1,47 +1,53 @@
 import deepFreeze from 'deep-freeze';
 import {
-  list,
+  allIds,
   loading,
   error,
   selectedVacancyId
-} from './vacancies'
+} from './vacancies';
 import {
   fetchVacancies,
   fetchVacanciesSuccess,
   fetchVacanciesFailure,
-  selectVacancy
+  selectVacancy,
+  fetchVacancySuccess
 } from '../actions/vacanciesActions';
 
 describe('vacancies', () => {
-  describe('list', () => {
-    it('should provide the initial state', () => {
-      expect(list(undefined, {})).toEqual([]);
+  describe('allIds', () => {
+    it('provides the initial state', () => {
+      expect(allIds(undefined, {})).toEqual([]);
     });
 
-    it('should handle VACANCIES_FETCH_SUCCESS action', () => {
-      const stateBefore = [{
-        test: 'test'
-      }];
-      const stateAfter = [{
-        first: 'result'
-      }, {
-        second: 'result'
-      }];
-      const action = fetchVacanciesSuccess(stateAfter);
+    it('handles VACANCIES_FETCH_SUCCESS action', () => {
+      const stateBefore = ['1'];
+      const stateAfter = ['1', '2'];
+      const action = fetchVacanciesSuccess({ result: stateAfter });
 
       deepFreeze(stateBefore);
       deepFreeze(action);
 
-      expect(list(stateBefore, action)).toEqual(stateAfter);
+      expect(allIds(stateBefore, action)).toEqual(stateAfter);
+    });
+
+    it('handles VACANCY_FETCH_SUCCESS action', () => {
+      const stateBefore = ['1'];
+      const stateAfter = ['1', '5'];
+      const action = fetchVacancySuccess({ result: '5' });
+
+      deepFreeze(stateBefore);
+      deepFreeze(action);
+
+      expect(allIds(stateBefore, action)).toEqual(stateAfter);
     });
   });
 
   describe('loading', () => {
-    it('should provide the initial state', () => {
+    it('provides the initial state', () => {
       expect(loading(undefined, {})).toEqual(false);
     });
 
-    it('should handle VACANCIES_FETCH_REQUEST action', () => {
+    it('handles VACANCIES_FETCH_REQUEST action', () => {
       const stateBefore = false;
       const stateAfter = true;
       const action = fetchVacancies();
@@ -52,7 +58,7 @@ describe('vacancies', () => {
       expect(loading(stateBefore, action)).toEqual(stateAfter);
     });
 
-    it('should handle VACANCIES_FETCH_SUCCESS action', () => {
+    it('handles VACANCIES_FETCH_SUCCESS action', () => {
       const stateBefore = true;
       const stateAfter = false;
       const action = fetchVacanciesSuccess();
@@ -63,7 +69,7 @@ describe('vacancies', () => {
       expect(loading(stateBefore, action)).toEqual(stateAfter);
     });
 
-    it('should handle VACANCIES_FETCH_FAILURE action', () => {
+    it('handles VACANCIES_FETCH_FAILURE action', () => {
       const stateBefore = true;
       const stateAfter = false;
       const action = fetchVacanciesFailure();
@@ -76,11 +82,11 @@ describe('vacancies', () => {
   });
 
   describe('error', () => {
-    it('should provide the initial state', () => {
+    it('provides the initial state', () => {
       expect(error(undefined, {})).toEqual(null);
     });
 
-    it('should handle VACANCIES_FETCH_FAILURE action', () => {
+    it('handles VACANCIES_FETCH_FAILURE action', () => {
       const stateBefore = null;
       const stateAfter = 'error';
       const action = fetchVacanciesFailure(stateAfter);
@@ -90,7 +96,7 @@ describe('vacancies', () => {
       expect(error(stateBefore, action)).toEqual(stateAfter);
     });
 
-    it('should handle VACANCIES_FETCH_REQUEST action', () => {
+    it('handles VACANCIES_FETCH_REQUEST action', () => {
       const stateBefore = 'error';
       const stateAfter = null;
       const action = fetchVacancies();
@@ -103,11 +109,11 @@ describe('vacancies', () => {
   });
 
   describe('selectedVacancyId', () => {
-    it('should provide the initial state', () => {
+    it('provides the initial state', () => {
       expect(selectedVacancyId(undefined, {})).toEqual(null);
     });
 
-    it('should handle VACANCY_SELECTED action', () => {
+    it('handles VACANCY_SELECTED action', () => {
       const stateBefore = null;
       const stateAfter = '1';
       const action = selectVacancy(stateAfter);

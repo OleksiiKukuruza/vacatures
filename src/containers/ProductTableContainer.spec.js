@@ -17,14 +17,14 @@ describe('ProductTableContainer', () => {
   it('passed correct props', () => {
     const state = {
       vacancies: {
-        list: [],
+        allIds: [],
         selectedVacancyId: 1,
         error: 'err',
         loading: true
       }
     };
     expect(mapStateToProps(state)).toEqual({
-      vacancies: state.vacancies.list,
+      vacancies: [],
       selectedVacancyId: state.vacancies.selectedVacancyId,
       error: state.vacancies.error,
       loading: state.vacancies.loading

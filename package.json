@@ -5,6 +5,9 @@
   "dependencies": {
     "enzyme-to-json": "^3.3.4",
     "jest-styled-components": "^5.0.1",
+    "lodash.merge": "^4.6.1",
+    "lodash.union": "^4.6.0",
+    "normalizr": "^3.2.4",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -16,7 +19,6 @@
     "recompose": "^0.28.1",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1",
     "styled-components": "^3.4.0"
   },
   "scripts": {

@@ -4,11 +4,17 @@ import { mapStateToProps } from './OrderContainer';
 describe('OrderContainer', () => {
   it('passed correct props', () => {
     const vacancy = {
-      id: '2'
+      id: '2',
+      name: 'name'
     };
     const state = {
+      entities: {
+        vacancies: {
+          '2': vacancy
+        }
+      },
       vacancies: {
-        list: [{ id: '1' }, vacancy, { id: '3' }],
+        allIds: ['1', '2', '3'],
         selectedVacancyId: '2',
       }
     };
