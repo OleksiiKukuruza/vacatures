@@ -4,6 +4,7 @@ const theme = {
     contrastText: '#fff'
   },
   background: '#f1f4f5',
+  error: '#f44336',
   spacingUnit: 8
 };
 

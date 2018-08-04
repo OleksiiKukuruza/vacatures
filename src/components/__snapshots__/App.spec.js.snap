@@ -16,6 +16,7 @@ exports[`App renders without crashing 1`] = `
     theme={
       Object {
         "background": "#f1f4f5",
+        "error": "#f44336",
         "primary": Object {
           "contrastText": "#fff",
           "main": "#54b6c8",

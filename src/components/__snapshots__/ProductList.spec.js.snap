@@ -8,7 +8,7 @@ exports[`ProductList renders ProductList without crashing 1`] = `
   <div>
     Introductiepakketten
   </div>
-  <Connect(branch(ProductTable)) />
+  <Connect(branch(branch(ProductTable))) />
 </styled.div>
 `;
 
