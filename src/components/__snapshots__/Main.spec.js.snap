@@ -1,14 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main renders only product list if nothing selected 1`] = `
-<styled.div>
-  <ProductList />
-</styled.div>
+exports[`Main renders ConfirmationPageContainer for /:id 1`] = `
+<Connect(ConfirmationPage)
+  id={123}
+/>
 `;
 
-exports[`Main renders product list if product selected 1`] = `
+exports[`Main renders OrderPageContainer for / 1`] = `<Connect(lifecycle(OrderPage)) />`;
+
+exports[`Main renders without crashing 1`] = `
 <styled.div>
-  <ProductList />
-  <Connect(Order) />
+  <Switch>
+    <Route
+      path="/:id"
+      render={[Function]}
+    />
+    <Route
+      path="/"
+      render={[Function]}
+    />
+  </Switch>
 </styled.div>
 `;

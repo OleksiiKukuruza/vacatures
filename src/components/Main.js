@@ -1,24 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ProductList from './ProductList';
-import OrderContainer from '../containers/OrderContainer';
+import { Route, Switch } from 'react-router-dom';
+import OrderPageContainer from '../containers/OrderPageContainer';
+import ConfirmationPageContainer from '../containers/ConfirmationPageContainer';
 
 const StyledMain = styled.div`
   width: 80%;
   height: 80%;
-  display: flex;
 `;
 
-const Main = ({ selectedVacancyId }) => (
+const Main = () => (
   <StyledMain>
-    <ProductList />
-    {selectedVacancyId && <OrderContainer />}
+    <Switch>
+      <Route
+        path="/:id"
+        render={(props) => <ConfirmationPageContainer id={props.match.params.id} />}
+      />
+      <Route
+        path="/"
+        render={() => <OrderPageContainer />}
+      />
+    </Switch>
   </StyledMain>
 );
-
-Main.propTypes = {
-  selectedVacancyId: PropTypes.string
-};
 
 export default Main;

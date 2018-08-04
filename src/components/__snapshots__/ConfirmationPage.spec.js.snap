@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmationPage renders without crashing 1`] = `
+<div>
+  name
+  <FeatureList
+    features={
+      Array [
+        "First",
+        "Second",
+      ]
+    }
+  />
+  <OrderValues
+    discount={10}
+    name="name"
+    originalPrice={100}
+  />
+</div>
+`;

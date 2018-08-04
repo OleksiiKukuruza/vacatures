@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Main from './Main';
+import { Route } from 'react-router-dom';
 
-const setup = (props) => {
-  const wrapper = shallow(<Main {...props} />);
+const setup = () => {
+  const wrapper = shallow(<Main />);
 
   return {
     wrapper
@@ -12,13 +12,20 @@ const setup = (props) => {
 };
 
 describe('Main', () => {
-  it('renders only product list if nothing selected', () => {
-    const { wrapper } = setup({ selectedVacancyId: null });
+  it('renders without crashing', () => {
+    const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders product list if product selected', () => {
-    const { wrapper } = setup({ selectedVacancyId: '1' });
-    expect(wrapper).toMatchSnapshot();
+  it('renders ConfirmationPageContainer for /:id', () => {
+    const { wrapper } = setup();
+    const route = wrapper.find(Route).at(0);
+    expect(route.props().render({ match: { params: { id: 123 } } })).toMatchSnapshot();
+  });
+
+  it('renders OrderPageContainer for /', () => {
+    const { wrapper } = setup();
+    const route = wrapper.find(Route).at(1);
+    expect(route.props().render()).toMatchSnapshot();
   });
 });

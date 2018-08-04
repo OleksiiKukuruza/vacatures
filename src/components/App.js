@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '../store/configureStore';
 import theme from '../theme';
-import MainContainer from '../containers/MainContainer';
+import Main from '../components/Main';
 
 const store = configureStore();
 
@@ -17,9 +18,11 @@ const StyledApp = styled.div`
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <StyledApp>
-        <MainContainer />
-      </StyledApp>
+      <BrowserRouter>
+        <StyledApp>
+          <Main />
+        </StyledApp>
+      </BrowserRouter>
     </ThemeProvider>
   </Provider>
 );

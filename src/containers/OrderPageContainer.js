@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { fetchVacancies } from '../actions/vacanciesActions';
-import Main from '../components/Main';
 import { getSelectedVacancyId } from '../selectors';
+import OrderPage from '../components/OrderPage';
 
 export const mapStateToProps = state => ({
   selectedVacancyId: getSelectedVacancyId(state)
@@ -18,9 +18,9 @@ export const withLifecycle = lifecycle({
   }
 });
 
-const MainContainer = compose(
+const OrderPageContainer = compose(
   withFetch,
   withLifecycle
-)(Main);
+)(OrderPage);
 
-export default MainContainer;
+export default OrderPageContainer;

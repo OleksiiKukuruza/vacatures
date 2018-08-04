@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { withLifecycle, mapStateToProps } from './MainContainer';
+import { withLifecycle, mapStateToProps } from './OrderPageContainer';
 
-describe('MainContainer', () => {
+describe('OrderPageContainer', () => {
   it('passed correct props', () => {
     const state = {
       vacancies: {

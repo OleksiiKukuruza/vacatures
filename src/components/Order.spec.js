@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import theme from '../theme';
-import Order, { StyledOrder, StyledFeatures, StyledButton, JobImg } from './Order';
+import Order, { StyledOrder, StyledButton, JobImg } from './Order';
 
 const setup = (Component, props) => {
   const wrapper = shallow(<Component {...props} />);
@@ -29,11 +29,6 @@ describe('Order', () => {
 
   it('renders StyledOrder without crashing', () => {
     const { wrapper } = setup(StyledOrder, {theme});
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('renders StyledFeatures without crashing', () => {
-    const { wrapper } = setup(StyledFeatures, {theme});
     expect(wrapper).toMatchSnapshot();
   });
 
