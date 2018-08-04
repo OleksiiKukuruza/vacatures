@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import theme from '../theme';
-import ProductTable, { StyledRow } from './ProductTable';
+import ProductTable, { StyledRow, StyledInput } from './ProductTable';
 
 const setup = (Component, props) => {
   const wrapper = shallow(<Component {...props} />);
@@ -60,6 +60,11 @@ describe('ProductTable', () => {
 
   it('renders StyledRow in passive state', () => {
     const { wrapper } = setup(StyledRow, { active: false, theme });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders StyledInput in passive state', () => {
+    const { wrapper } = setup(StyledInput, { theme });
     expect(wrapper).toMatchSnapshot();
   });
 });

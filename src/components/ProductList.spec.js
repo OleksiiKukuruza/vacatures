@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import theme from '../theme';
-import ProductList, { StyledHeader, StyledProductList } from './ProductList';
+import ProductList, { StyledHeader, StyledProductList, StyledSubHeader } from './ProductList';
 
 const setup = (Component) => {
   const wrapper = shallow(<Component theme={theme} />);
@@ -24,6 +24,11 @@ describe('ProductList', () => {
 
   it('renders StyledHeader without crashing', () => {
     const { wrapper } = setup(StyledHeader);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders StyledSubHeader without crashing', () => {
+    const { wrapper } = setup(StyledSubHeader, { theme });
     expect(wrapper).toMatchSnapshot();
   });
 });

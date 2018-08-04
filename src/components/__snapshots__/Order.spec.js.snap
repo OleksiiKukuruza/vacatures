@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order renders JobImg without crashing 1`] = `
+.c0 {
+  height: 100px;
+  margin: 32px 0;
+}
+
+<img
+  className="c0"
+/>
+`;
+
+exports[`Order renders Order without crashing 1`] = `
+<styled.div>
+  <styled.div>
+    Bestelling
+    <styled.img
+      alt="Job Image"
+      src="img.src"
+    />
+    name
+    <styled.div>
+      <div
+        key="First"
+      >
+        &gt; 
+        First
+      </div>
+      <div
+        key="Second"
+      >
+        &gt; 
+        Second
+      </div>
+    </styled.div>
+  </styled.div>
+  <div>
+    <OrderValues
+      discount={10}
+      name="name"
+      originalPrice={100}
+    />
+    <Styled(styled.button)
+      fullWidth={true}
+    >
+      Bestellen
+    </Styled(styled.button)>
+  </div>
+</styled.div>
+`;
+
+exports[`Order renders StyledButton without crashing 1`] = `
+.c0 {
+  margin-top: 16px;
+}
+
+<styled.button
+  className="c0"
+  theme={
+    Object {
+      "background": "#f1f4f5",
+      "error": "#f44336",
+      "primary": Object {
+        "contrastText": "#fff",
+        "main": "#54b6c8",
+      },
+      "spacingUnit": 8,
+    }
+  }
+/>
+`;
+
+exports[`Order renders StyledFeatures without crashing 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 16px 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Order renders StyledOrder without crashing 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #54b6c8;
+  color: #fff;
+  padding: 16px;
+}
+
+<div
+  className="c0"
+/>
+`;

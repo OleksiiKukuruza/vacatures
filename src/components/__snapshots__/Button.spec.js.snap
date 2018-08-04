@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders default width without crashing 1`] = `
+.c0 {
+  cursor: pointer;
+  width: auto;
+  font-size: 1.3rem;
+  background-color: #fff;
+  color: #54b6c8;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 8px 0;
+  -webkit-transition: filter 300ms ease-in;
+  transition: filter 300ms ease-in;
+}
+
+.c0:hover {
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button renders full width without crashing 1`] = `
+.c0 {
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.3rem;
+  background-color: #fff;
+  color: #54b6c8;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 8px 0;
+  -webkit-transition: filter 300ms ease-in;
+  transition: filter 300ms ease-in;
+}
+
+.c0:hover {
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+
+<button
+  className="c0"
+/>
+`;

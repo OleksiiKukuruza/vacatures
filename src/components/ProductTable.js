@@ -12,24 +12,41 @@ const StyledProductTable = styled.div`
 export const StyledRow = styled(Row)`
   cursor: pointer;
   background-color: ${({ active, theme }) => active ? theme.background : theme.primary.contrastText};
+  padding: ${props => 2 * props.theme.spacingUnit}px;
+`;
+
+const StyledHeaderRow = styled(StyledRow)`
+  font-size: 0.8rem;
+`;
+
+const StyledCrossedCell = styled(Cell)`
+  text-decoration: line-through;
+`;
+
+const StyledBoldCell = styled(Cell)`
+  font-weight: bold;
+`;
+
+export const StyledInput = styled.input`
+  margin-right: ${props => props.theme.spacingUnit}px;
 `;
 
 const ProductTable = ({ vacancies, selectedVacancyId, selectVacancy }) => (
   <StyledProductTable>
-    <Row>
+    <StyledHeaderRow>
       <Cell size={6}>
         Abonnement
       </Cell>
-      <Cell size={2}>
+      <Cell size={2} justifyContent="center">
         Periode
       </Cell>
-      <Cell size={2}>
+      <Cell size={2} justifyContent="center">
         Normale Prijs
       </Cell>
-      <Cell size={2}>
+      <Cell size={2} justifyContent="flex-end">
         Prijs
       </Cell>
-    </Row>
+    </StyledHeaderRow>
     {vacancies.map(vacancy => (
       <StyledRow
         key={vacancy.id}
@@ -37,22 +54,22 @@ const ProductTable = ({ vacancies, selectedVacancyId, selectVacancy }) => (
         active={selectedVacancyId === vacancy.id}
       >
         <Cell size={6}>
-          <input
+          <StyledInput
             type="radio"
             readOnly
             checked={selectedVacancyId === vacancy.id}
           />
           {vacancy.name}
         </Cell>
-        <Cell size={2}>
+        <Cell size={2} justifyContent="center">
           {vacancy.period}
         </Cell>
-        <Cell size={2}>
-          {vacancy.originalPrice}
-        </Cell>
-        <Cell size={2}>
-          {vacancy.originalPrice - vacancy.discount}
-        </Cell>
+        <StyledCrossedCell size={2} justifyContent="center">
+          € {vacancy.originalPrice}
+        </StyledCrossedCell>
+        <StyledBoldCell size={2} justifyContent="flex-end">
+          € {vacancy.originalPrice - vacancy.discount}
+        </StyledBoldCell>
       </StyledRow>
     ))}
   </StyledProductTable>

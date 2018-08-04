@@ -7,10 +7,13 @@ const Row = styled.div`
 
 const Cell = styled.div`
   flex: ${props => props.size};
+  display: flex;
+  justify-content: ${props => props.justifyContent || 'flex-start'};
 `;
 
 Cell.propTypes = {
   size: PropTypes.number.isRequired,
+  justifyContent: PropTypes.string
 };
 
 export { Row, Cell };

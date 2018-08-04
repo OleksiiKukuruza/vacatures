@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderValues renders OrderValues without crashing 1`] = `
+<styled.div>
+  <Styled(styled.div)>
+    <styled.div
+      size={10}
+    >
+      Prijs 
+      name
+    </styled.div>
+    <styled.div
+      justifyContent="flex-end"
+      size={2}
+    >
+      € 
+      100
+    </styled.div>
+  </Styled(styled.div)>
+  <Styled(styled.div)>
+    <styled.div
+      size={10}
+    >
+      Korting
+    </styled.div>
+    <styled.div
+      justifyContent="flex-end"
+      size={2}
+    >
+      - € 
+      10
+    </styled.div>
+  </Styled(styled.div)>
+  <Styled(styled.div)>
+    <Styled(styled.div)
+      size={10}
+    >
+      Totaal
+    </Styled(styled.div)>
+    <Styled(styled.div)
+      justifyContent="flex-end"
+      size={2}
+    >
+      € 
+      90
+    </Styled(styled.div)>
+  </Styled(styled.div)>
+</styled.div>
+`;
+
+exports[`OrderValues renders StyledOrderValues without crashing 1`] = `
+.c0 {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 24px 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`OrderValues renders StyledRow without crashing 1`] = `
+.c0 {
+  padding: 4px 0;
+}
+
+<styled.div
+  className="c0"
+  theme={
+    Object {
+      "background": "#f1f4f5",
+      "error": "#f44336",
+      "primary": Object {
+        "contrastText": "#fff",
+        "main": "#54b6c8",
+      },
+      "spacingUnit": 8,
+    }
+  }
+/>
+`;

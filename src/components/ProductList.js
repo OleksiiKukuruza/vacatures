@@ -7,10 +7,16 @@ export const StyledProductList = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid ${props => props.theme.primary.main};
+  padding: ${props => 2 * props.theme.spacingUnit}px;
 `;
 
 export const StyledHeader = styled.h3`
+  margin: 0 0 ${props => 2 * props.theme.spacingUnit}px;
   color: ${props => props.theme.primary.main};
+`;
+
+export const StyledSubHeader = styled.div`
+  margin-bottom: ${props => 2 * props.theme.spacingUnit}px;
 `;
 
 const ProductList = () => (
@@ -18,9 +24,9 @@ const ProductList = () => (
     <StyledHeader>
       Online Vacatures
     </StyledHeader>
-    <div>
+    <StyledSubHeader>
       Introductiepakketten
-    </div>
+    </StyledSubHeader>
     <ProductTableContainer />
   </StyledProductList>
 );

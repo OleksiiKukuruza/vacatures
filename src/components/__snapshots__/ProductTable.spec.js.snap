@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ProductTable renders StyledInput in passive state 1`] = `
+.c0 {
+  margin-right: 8px;
+}
+
+<input
+  className="c0"
+/>
+`;
+
 exports[`ProductTable renders StyledRow in active state 1`] = `
 .c0 {
   cursor: pointer;
   background-color: #f1f4f5;
+  padding: 16px;
 }
 
 <styled.div
@@ -27,6 +38,7 @@ exports[`ProductTable renders StyledRow in passive state 1`] = `
 .c0 {
   cursor: pointer;
   background-color: #fff;
+  padding: 16px;
 }
 
 <styled.div
@@ -48,28 +60,31 @@ exports[`ProductTable renders StyledRow in passive state 1`] = `
 
 exports[`ProductTable renders without crashing 1`] = `
 <styled.div>
-  <styled.div>
+  <Styled(Styled(styled.div))>
     <styled.div
       size={6}
     >
       Abonnement
     </styled.div>
     <styled.div
+      justifyContent="center"
       size={2}
     >
       Periode
     </styled.div>
     <styled.div
+      justifyContent="center"
       size={2}
     >
       Normale Prijs
     </styled.div>
     <styled.div
+      justifyContent="flex-end"
       size={2}
     >
       Prijs
     </styled.div>
-  </styled.div>
+  </Styled(Styled(styled.div))>
   <Styled(styled.div)
     active={true}
     key="1"
@@ -78,7 +93,7 @@ exports[`ProductTable renders without crashing 1`] = `
     <styled.div
       size={6}
     >
-      <input
+      <styled.input
         checked={true}
         readOnly={true}
         type="radio"
@@ -86,20 +101,25 @@ exports[`ProductTable renders without crashing 1`] = `
       test
     </styled.div>
     <styled.div
+      justifyContent="center"
       size={2}
     >
       21
     </styled.div>
-    <styled.div
+    <Styled(styled.div)
+      justifyContent="center"
       size={2}
     >
+      € 
       50
-    </styled.div>
-    <styled.div
+    </Styled(styled.div)>
+    <Styled(styled.div)
+      justifyContent="flex-end"
       size={2}
     >
+      € 
       40
-    </styled.div>
+    </Styled(styled.div)>
   </Styled(styled.div)>
   <Styled(styled.div)
     active={false}
@@ -109,7 +129,7 @@ exports[`ProductTable renders without crashing 1`] = `
     <styled.div
       size={6}
     >
-      <input
+      <styled.input
         checked={false}
         readOnly={true}
         type="radio"
@@ -117,20 +137,25 @@ exports[`ProductTable renders without crashing 1`] = `
       test1
     </styled.div>
     <styled.div
+      justifyContent="center"
       size={2}
     >
       32
     </styled.div>
-    <styled.div
+    <Styled(styled.div)
+      justifyContent="center"
       size={2}
     >
+      € 
       60
-    </styled.div>
-    <styled.div
+    </Styled(styled.div)>
+    <Styled(styled.div)
+      justifyContent="flex-end"
       size={2}
     >
+      € 
       40
-    </styled.div>
+    </Styled(styled.div)>
   </Styled(styled.div)>
 </styled.div>
 `;

@@ -5,6 +5,14 @@ exports[`Table renders Cell without crashing 1`] = `
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 <div

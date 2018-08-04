@@ -5,15 +5,16 @@ exports[`ProductList renders ProductList without crashing 1`] = `
   <styled.h3>
     Online Vacatures
   </styled.h3>
-  <div>
+  <styled.div>
     Introductiepakketten
-  </div>
+  </styled.div>
   <Connect(branch(branch(ProductTable))) />
 </styled.div>
 `;
 
 exports[`ProductList renders StyledHeader without crashing 1`] = `
 .c0 {
+  margin: 0 0 16px;
   color: #54b6c8;
 }
 
@@ -35,6 +36,17 @@ exports[`ProductList renders StyledProductList without crashing 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   border: 1px solid #54b6c8;
+  padding: 16px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`ProductList renders StyledSubHeader without crashing 1`] = `
+.c0 {
+  margin-bottom: 16px;
 }
 
 <div
