@@ -41,8 +41,6 @@ export const selectedVacancyId = (state = null, action) => {
   switch (action.type) {
     case VACANCY_SELECTED:
       return action.payload.id;
-    case VACANCIES_FETCH_SUCCESS:
-      return action.payload.vacancies[0].id;
     default:
       return state;
   }

@@ -4,12 +4,18 @@ import Loader from '../components/Loader';
 import Error from '../components/Error';
 import ProductTable from '../components/ProductTable';
 import { selectVacancy } from '../actions/vacanciesActions';
+import {
+  getSelectedVacancyId,
+  getVacancies,
+  getVacanciesError,
+  getVacanciesLoading
+} from '../selectors';
 
-export const mapStateToProps = ({ vacancies }) => ({
-  vacancies: vacancies.list,
-  selectedVacancyId: vacancies.selectedVacancyId,
-  error: vacancies.error,
-  loading: vacancies.loading
+export const mapStateToProps = state => ({
+  vacancies: getVacancies(state),
+  selectedVacancyId: getSelectedVacancyId(state),
+  error: getVacanciesError(state),
+  loading: getVacanciesLoading(state)
 });
 
 const withData = connect(mapStateToProps, {

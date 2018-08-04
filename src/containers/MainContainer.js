@@ -2,8 +2,13 @@ import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { fetchVacancies } from '../actions/vacanciesActions';
 import Main from '../components/Main';
+import { getSelectedVacancyId } from '../selectors';
 
-const withFetch = connect(null, {
+export const mapStateToProps = state => ({
+  selectedVacancyId: getSelectedVacancyId(state)
+});
+
+const withFetch = connect(mapStateToProps, {
   fetchVacancies
 });
 

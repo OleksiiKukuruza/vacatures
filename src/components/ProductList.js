@@ -7,7 +7,6 @@ export const StyledProductList = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid ${props => props.theme.primary.main};
-  border-right: none;
 `;
 
 export const StyledHeader = styled.h3`

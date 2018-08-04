@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import jobImg from '../assets/job.jpg';
 
@@ -15,15 +16,21 @@ const JobImg = styled.img`
   margin: ${props => 4 * props.theme.spacingUnit}px 0;
 `;
 
-const Order = () => (
+const Order = ({ vacancy: { name } }) => (
   <StyledOrder>
     Bestelling
     <JobImg src={jobImg} alt="Job" />
-    Standaard Vacature
+    {name}
     <div>
       > 60 dagen online
     </div>
   </StyledOrder>
 );
+
+Order.propTypes = {
+  vacancy: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default Order;

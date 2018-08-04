@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 
 import Main from './Main';
 
-const setup = () => {
-  const wrapper = shallow(<Main />);
+const setup = (props) => {
+  const wrapper = shallow(<Main {...props} />);
 
   return {
     wrapper
@@ -12,8 +12,13 @@ const setup = () => {
 };
 
 describe('Main', () => {
-  it('renders without crashing', () => {
-    const { wrapper } = setup();
+  it('renders only product list if nothing selected', () => {
+    const { wrapper } = setup({ selectedVacancyId: null });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders product list if product selected', () => {
+    const { wrapper } = setup({ selectedVacancyId: '1' });
     expect(wrapper).toMatchSnapshot();
   });
 });

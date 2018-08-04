@@ -1,19 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Order from './Order';
 import ProductList from './ProductList';
+import OrderContainer from '../containers/OrderContainer';
 
 const StyledMain = styled.div`
-  flex: 1;
+  width: 80%;
+  height: 80%;
   display: flex;
-  margin: 0 10%;
 `;
 
-const Main = () => (
+const Main = ({ selectedVacancyId }) => (
   <StyledMain>
     <ProductList />
-    <Order />
+    {selectedVacancyId && <OrderContainer />}
   </StyledMain>
 );
+
+Main.propTypes = {
+  selectedVacancyId: PropTypes.string
+};
 
 export default Main;

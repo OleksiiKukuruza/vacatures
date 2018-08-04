@@ -116,15 +116,5 @@ describe('vacancies', () => {
 
       expect(selectedVacancyId(stateBefore, action)).toEqual(stateAfter);
     });
-
-    it('should handle VACANCIES_FETCH_SUCCESS action', () => {
-      const stateBefore = null;
-      const stateAfter = '1';
-      const action = fetchVacanciesSuccess([{ id: stateAfter }]);
-
-      deepFreeze(action);
-
-      expect(selectedVacancyId(stateBefore, action)).toEqual(stateAfter);
-    });
   });
 });

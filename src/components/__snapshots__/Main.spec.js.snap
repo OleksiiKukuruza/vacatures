@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main renders without crashing 1`] = `
+exports[`Main renders only product list if nothing selected 1`] = `
 <styled.div>
   <ProductList />
-  <Order />
+</styled.div>
+`;
+
+exports[`Main renders product list if product selected 1`] = `
+<styled.div>
+  <ProductList />
+  <Connect(Order) />
 </styled.div>
 `;
