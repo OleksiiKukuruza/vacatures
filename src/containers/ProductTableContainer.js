@@ -5,7 +5,7 @@ import Error from '../components/Error';
 import ProductTable from '../components/ProductTable';
 import { selectVacancy } from '../actions/vacanciesActions';
 
-const mapStateToProps = ({ vacancies }) => ({
+export const mapStateToProps = ({ vacancies }) => ({
   vacancies: vacancies.list,
   selectedVacancyId: vacancies.selectedVacancyId,
   error: vacancies.error,
@@ -16,12 +16,12 @@ const withData = connect(mapStateToProps, {
   selectVacancy
 });
 
-const withLoader = branch(
+export const withLoader = branch(
   ({ loading }) => loading,
   renderComponent(Loader)
 );
 
-const withError = branch(
+export const withError = branch(
   ({ error }) => !!error,
   renderComponent(Error)
 );
