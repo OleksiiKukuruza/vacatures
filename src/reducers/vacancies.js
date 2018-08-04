@@ -25,6 +25,17 @@ export const loading = (state = false, action) => {
   }
 };
 
+export const error = (state = null, action) => {
+  switch (action.type) {
+    case VACANCIES_FETCH_FAILURE:
+      return action.payload.err;
+    case VACANCIES_FETCH_REQUEST:
+      return null;
+    default:
+      return state;
+  }
+};
+
 const vacancies = combineReducers({
   list,
   loading

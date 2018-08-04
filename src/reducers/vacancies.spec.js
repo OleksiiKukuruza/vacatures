@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze';
-import { list, loading } from './vacancies'
+import { list, loading, error } from './vacancies'
 import {
   fetchVacancies,
   fetchVacanciesSuccess,
@@ -66,6 +66,33 @@ describe('vacancies', () => {
       deepFreeze(action);
 
       expect(loading(stateBefore, action)).toEqual(stateAfter);
+    });
+  });
+
+  describe('error', () => {
+    it('should provide the initial state', () => {
+      expect(error(undefined, {})).toEqual(null);
+    });
+
+    it('should handle VACANCIES_FETCH_FAILURE action', () => {
+      const stateBefore = null;
+      const stateAfter = 'error';
+      const action = fetchVacanciesFailure(stateAfter);
+
+      deepFreeze(action);
+
+      expect(error(stateBefore, action)).toEqual(stateAfter);
+    });
+
+    it('should handle VACANCIES_FETCH_REQUEST action', () => {
+      const stateBefore = 'error';
+      const stateAfter = null;
+      const action = fetchVacancies();
+
+      deepFreeze(stateBefore);
+      deepFreeze(action);
+
+      expect(error(stateBefore, action)).toEqual(stateAfter);
     });
   });
 });
