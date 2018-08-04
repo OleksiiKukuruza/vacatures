@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders Cell without crashing 1`] = `
+.c0 {
+  -webkit-flex: 10;
+  -ms-flex: 10;
+  flex: 10;
+}
+
+<div
+  className="c0"
+  size={10}
+/>
+`;
+
+exports[`Table renders Row without crashing 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="c0"
+/>
+`;
