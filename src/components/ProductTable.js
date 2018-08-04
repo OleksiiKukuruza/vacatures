@@ -9,7 +9,7 @@ const StyledProductTable = styled.div`
   border-right: none;
 `;
 
-const StyledRow = styled(Row)`
+export const StyledRow = styled(Row)`
   cursor: pointer;
   background-color: ${({ active, theme }) => active ? theme.background : theme.primary.contrastText};
 `;
@@ -17,7 +17,7 @@ const StyledRow = styled(Row)`
 const ProductTable = ({ vacancies, selectedVacancyId, selectVacancy }) => (
   <StyledProductTable>
     <Row>
-      <Cell size={6} alignItems="flex-start">
+      <Cell size={6}>
         Abonnement
       </Cell>
       <Cell size={2}>

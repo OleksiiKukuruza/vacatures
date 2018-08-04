@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductTable renders StyledRow in active state 1`] = `
+.c0 {
+  cursor: pointer;
+  background-color: #f1f4f5;
+}
+
+<styled.div
+  active={true}
+  className="c0"
+  theme={
+    Object {
+      "background": "#f1f4f5",
+      "error": "#f44336",
+      "primary": Object {
+        "contrastText": "#fff",
+        "main": "#54b6c8",
+      },
+      "spacingUnit": 8,
+    }
+  }
+/>
+`;
+
+exports[`ProductTable renders StyledRow in passive state 1`] = `
+.c0 {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+<styled.div
+  active={false}
+  className="c0"
+  theme={
+    Object {
+      "background": "#f1f4f5",
+      "error": "#f44336",
+      "primary": Object {
+        "contrastText": "#fff",
+        "main": "#54b6c8",
+      },
+      "spacingUnit": 8,
+    }
+  }
+/>
+`;
+
+exports[`ProductTable renders without crashing 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div
+      size={6}
+    >
+      Abonnement
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      Periode
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      Normale Prijs
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      Prijs
+    </styled.div>
+  </styled.div>
+  <Styled(styled.div)
+    active={true}
+    key="1"
+    onClick={[Function]}
+  >
+    <styled.div
+      size={6}
+    >
+      <input
+        checked={true}
+        readOnly={true}
+        type="radio"
+      />
+      test
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      21
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      50
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      40
+    </styled.div>
+  </Styled(styled.div)>
+  <Styled(styled.div)
+    active={false}
+    key="2"
+    onClick={[Function]}
+  >
+    <styled.div
+      size={6}
+    >
+      <input
+        checked={false}
+        readOnly={true}
+        type="radio"
+      />
+      test1
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      32
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      60
+    </styled.div>
+    <styled.div
+      size={2}
+    >
+      40
+    </styled.div>
+  </Styled(styled.div)>
+</styled.div>
+`;
