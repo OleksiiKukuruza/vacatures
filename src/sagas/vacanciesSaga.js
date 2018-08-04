@@ -8,7 +8,7 @@ import {
 } from '../actions/vacanciesActions';
 
 export function* loadVacancies() {
-  yield call(delay, 2000);
+  yield call(delay, 1000);
   const successOrFailure = Math.random() >= 0.5
     ? fetchVacanciesSuccess(vacancies)
     : fetchVacanciesFailure('Failed to load vacancies');

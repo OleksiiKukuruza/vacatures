@@ -1,9 +1,15 @@
 import deepFreeze from 'deep-freeze';
-import { list, loading, error } from './vacancies'
+import {
+  list,
+  loading,
+  error,
+  selectedVacancyId
+} from './vacancies'
 import {
   fetchVacancies,
   fetchVacanciesSuccess,
-  fetchVacanciesFailure
+  fetchVacanciesFailure,
+  selectVacancy
 } from '../actions/vacanciesActions';
 
 describe('vacancies', () => {
@@ -93,6 +99,32 @@ describe('vacancies', () => {
       deepFreeze(action);
 
       expect(error(stateBefore, action)).toEqual(stateAfter);
+    });
+  });
+
+  describe('selectedVacancyId', () => {
+    it('should provide the initial state', () => {
+      expect(selectedVacancyId(undefined, {})).toEqual(null);
+    });
+
+    it('should handle VACANCY_SELECTED action', () => {
+      const stateBefore = null;
+      const stateAfter = '1';
+      const action = selectVacancy(stateAfter);
+
+      deepFreeze(action);
+
+      expect(selectedVacancyId(stateBefore, action)).toEqual(stateAfter);
+    });
+
+    it('should handle VACANCIES_FETCH_SUCCESS action', () => {
+      const stateBefore = null;
+      const stateAfter = '1';
+      const action = fetchVacanciesSuccess([{ id: stateAfter }]);
+
+      deepFreeze(action);
+
+      expect(selectedVacancyId(stateBefore, action)).toEqual(stateAfter);
     });
   });
 });

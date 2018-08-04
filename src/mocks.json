@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "name": "Simple vacature",
     "period": 15,
     "originalPrice": 49,
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "id": "2",
     "name": "Standaard vacature",
     "period": 60,
     "originalPrice": 99,
@@ -23,6 +25,7 @@
     ]
   },
   {
+    "id": "3",
     "name": "2 x Standaard vacature",
     "period": 60,
     "originalPrice": 169,
@@ -35,6 +38,7 @@
     ]
   },
   {
+    "id": "4",
     "name": "All-in vacature",
     "period": 60,
     "originalPrice": 299,

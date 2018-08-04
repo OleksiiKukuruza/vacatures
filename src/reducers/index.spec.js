@@ -5,7 +5,9 @@ describe('root reducer', () => {
     expect(reducer({}, { type: '@@INIT' })).toEqual({
       vacancies: {
         list: [],
-        loading: false
+        loading: false,
+        error: null,
+        selectedVacancyId: null
       }
     });
   });

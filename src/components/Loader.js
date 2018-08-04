@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PacmanLoader } from 'react-spinners';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
-const ThemedLoader = ({ theme }) => (
-  <PacmanLoader
-    color={theme.primary.main}
-  />
+const StyledLoader = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ThemedLoader = ({ theme }) => (
+  <StyledLoader>
+    <PacmanLoader color={theme.primary.main} />
+  </StyledLoader>
 );
 
 ThemedLoader.propTypes = {

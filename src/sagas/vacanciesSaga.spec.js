@@ -9,7 +9,7 @@ describe('vacancies Saga', () => {
     const gen = loadVacancies();
 
     Math.random = () => 1;
-    expect(gen.next().value).toEqual(call(delay, 2000));
+    expect(gen.next().value).toEqual(call(delay, 1000));
     expect(gen.next().value).toEqual(put(fetchVacanciesSuccess(vacancies)));
     expect(gen.next()).toEqual({ done: true, value: undefined });
   });
@@ -18,7 +18,7 @@ describe('vacancies Saga', () => {
     const gen = loadVacancies();
 
     Math.random = () => 0;
-    expect(gen.next().value).toEqual(call(delay, 2000));
+    expect(gen.next().value).toEqual(call(delay, 1000));
     expect(gen.next().value).toEqual(put(fetchVacanciesFailure('Failed to load vacancies')));
     expect(gen.next()).toEqual({ done: true, value: undefined });
   });

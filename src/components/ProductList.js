@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ProductTableContainer from '../containers/ProductTableContainer';
 
 const StyledProductList = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   border: 1px solid ${props => props.theme.primary.main};

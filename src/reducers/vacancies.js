@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import {
   VACANCIES_FETCH_FAILURE,
   VACANCIES_FETCH_REQUEST,
-  VACANCIES_FETCH_SUCCESS
+  VACANCIES_FETCH_SUCCESS,
+  VACANCY_SELECTED
 } from '../actions/vacanciesActions';
 
 export const list = (state = [], action) => {
@@ -36,9 +37,22 @@ export const error = (state = null, action) => {
   }
 };
 
+export const selectedVacancyId = (state = null, action) => {
+  switch (action.type) {
+    case VACANCY_SELECTED:
+      return action.payload.id;
+    case VACANCIES_FETCH_SUCCESS:
+      return action.payload.vacancies[0].id;
+    default:
+      return state;
+  }
+};
+
 const vacancies = combineReducers({
   list,
-  loading
+  loading,
+  error,
+  selectedVacancyId
 });
 
 export default vacancies;

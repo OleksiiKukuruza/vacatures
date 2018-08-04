@@ -1,44 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Cell, Row } from './Table';
 
 const StyledProductTable = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid ${props => props.theme.primary.main};
   border-right: none;
 `;
 
-const StyledRow = styled.div`
-  display: flex;
+const StyledRow = styled(Row)`
+  cursor: pointer;
+  background-color: ${({ active, theme }) => active ? theme.background : theme.primary.contrastText};
 `;
 
-const ProductTable = ({ vacancies }) => (
+const ProductTable = ({ vacancies, selectedVacancyId, selectVacancy }) => (
   <StyledProductTable>
-    <StyledRow>
-      <div>
+    <Row>
+      <Cell size={6} alignItems="flex-start">
         Abonnement
-      </div>
-      <div>
+      </Cell>
+      <Cell size={2}>
         Periode
-      </div>
-      <div>
+      </Cell>
+      <Cell size={2}>
         Normale Prijs
-      </div>
-      <div>
+      </Cell>
+      <Cell size={2}>
         Prijs
-      </div>
-    </StyledRow>
+      </Cell>
+    </Row>
+    {vacancies.map(vacancy => (
+      <StyledRow
+        key={vacancy.id}
+        onClick={() => selectVacancy(vacancy.id)}
+        active={selectedVacancyId === vacancy.id}
+      >
+        <Cell size={6}>
+          <input
+            type="radio"
+            readOnly
+            checked={selectedVacancyId === vacancy.id}
+          />
+          {vacancy.name}
+        </Cell>
+        <Cell size={2}>
+          {vacancy.period}
+        </Cell>
+        <Cell size={2}>
+          {vacancy.originalPrice}
+        </Cell>
+        <Cell size={2}>
+          {vacancy.originalPrice - vacancy.discount}
+        </Cell>
+      </StyledRow>
+    ))}
   </StyledProductTable>
 );
 
 ProductTable.propTypes = {
   vacancies: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     period: PropTypes.number.isRequired,
     originalPrice: PropTypes.number.isRequired,
     discount: PropTypes.number.isRequired
-  })).isRequired
+  })).isRequired,
+  selectedVacancyId: PropTypes.string,
+  selectVacancy: PropTypes.func.isRequired
 };
 
 export default ProductTable;
