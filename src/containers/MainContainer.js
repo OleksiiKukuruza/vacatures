@@ -7,7 +7,7 @@ const withFetch = connect(null, {
   fetchVacancies
 });
 
-const withLifecycle = lifecycle({
+export const withLifecycle = lifecycle({
   componentDidMount() {
     this.props.fetchVacancies();
   }
