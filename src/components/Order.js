@@ -25,7 +25,7 @@ export const StyledFeatures = styled.div`
 `;
 
 export const JobImg = styled.img`
-  height: 100px;
+  width: 100%;
   margin: ${props => 4 * props.theme.spacingUnit}px 0;
 `;
 

@@ -2,7 +2,7 @@
 
 exports[`Order renders JobImg without crashing 1`] = `
 .c0 {
-  height: 100px;
+  width: 100%;
   margin: 32px 0;
 }
 

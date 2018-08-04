@@ -5,7 +5,7 @@
     "period": 15,
     "originalPrice": 49,
     "discount": 5,
-    "image": "assets/job.jpg",
+    "image": "assets/job1.jpg",
     "features": [
       "Na plaatsing volgende dag zichtbaar",
       "Goed bereik: LBO/VMBO"
@@ -17,7 +17,7 @@
     "period": 60,
     "originalPrice": 99,
     "discount": 10,
-    "image": "assets/job.jpg",
+    "image": "assets/job2.jpg",
     "features": [
       "60 dagen online",
       "Na plaatsing direct zichtbaar",
@@ -30,7 +30,7 @@
     "period": 60,
     "originalPrice": 169,
     "discount": 40,
-    "image": "assets/job.jpg",
+    "image": "assets/job3.jpg",
     "features": [
       "120 dagen online",
       "Na plaatsing direct zichtbaar",
@@ -43,7 +43,7 @@
     "period": 60,
     "originalPrice": 299,
     "discount": 50,
-    "image": "assets/job.jpg",
+    "image": "assets/job4.jpg",
     "features": [
       "60 dagen online",
       "Na plaatsing direct zichtbaar",
