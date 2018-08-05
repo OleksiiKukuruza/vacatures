@@ -1,4 +1,3 @@
-import deepFreeze from 'deep-freeze';
 import {
   getVacancies
 } from './index';
